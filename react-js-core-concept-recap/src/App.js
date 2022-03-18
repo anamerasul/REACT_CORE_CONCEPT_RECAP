@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 // import React, { Component } from "react"; 
-
+import {useState} from 'react';
 function App() {
   return (
     <div className="App">
@@ -21,12 +21,17 @@ const districtStyle={
 }
 
 function District(props){
+const[power,setPower]=useState(1)
+const doublePower=()=>setPower(power*2)
   return(
     <div
     style={districtStyle}
     className='district'>
       <h2>Name:{props.name}</h2>
+     
       <p>Spcialtiy:{props.bivag}</p>
+      <h4>Power:{power}</h4>
+      <button onClick={doublePower}>Boast power</button>
     </div>
   )
 }
